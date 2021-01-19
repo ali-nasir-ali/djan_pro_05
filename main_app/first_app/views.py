@@ -31,3 +31,6 @@ def register(request):
    return render(request = request,
                  template_name = "register.html",
                  context={"form":form})
+
+
+# we will ust the django internal login and logout they are easy to use
