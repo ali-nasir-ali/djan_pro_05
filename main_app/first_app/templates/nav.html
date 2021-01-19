@@ -1,0 +1,22 @@
+<nav>
+  <div class="nav-wrapper">
+   <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">home page</a></li>
+      <li><a href="{% url 'admin:index' %}">Community</a></li>
+    {% if user.is_authenticated %}
+        <li><div class="form-inline my-2 my-lg-0">
+              <div class="p-s bg-dark mr-2 text-white">LOG IN as {{ user.username|title }}</div></li>
+              <li> <a href="{% url 'logout' %} ">
+              <button class="btn btn-info my-2 my-sm-0" type="submit">LOG OUT</button></a></div></li>
+        
+    {% else %}
+        <li><a href="{% url 'login' %} ">
+        <button class="btn btn-success mr-2 my-2 my-sm-0" type="submit">LOG IN</button></a></li>
+       <li> <a href="{% url 'register' %} ">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">REGISTER</button></a></li>
+  
+    {% endif %}
+
+    </ul>
+  </div>
+</nav>

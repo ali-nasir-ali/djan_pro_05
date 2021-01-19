@@ -1,0 +1,41 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static "css/materialize.css" %}">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+ {% include 'nav.html' %}
+</head>
+
+     <script>M.toast({html: "tosssted", classess: 'RED rounded', displayLength:2000});</script>
+
+<body>
+
+    <div class="container">
+      {% include 'messaging.html' %}
+    </div>
+    
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+
+  <!-- Prism JS -->
+  <script src="{% static "tinymce/js/prism.js" %}"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+     
+</html>
