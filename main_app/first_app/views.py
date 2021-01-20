@@ -6,9 +6,9 @@ from django.contrib import messages
  
 def homepage(request):
     return render(request=request,
-                  template_name='main/categories.html',
+                  template_name='categories.html',
                   context={"categories": TutorialCategory.objects.all})
-                  
+
 def register(request):
    if request.method == "POST":
        form = UserCreationForm(request.POST)
